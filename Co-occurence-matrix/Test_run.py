@@ -16,10 +16,6 @@ matrix = np.zeros(shape=(size,size))
 #update matrix
 for row in vocab:
 	for column in vocab:
-		matrix[vocab.index(row),vocab.index(column)] = co_occurrence(corpus=Corpus,
-																		word1=row,
-																		word2=column,
-																		contextwindow=2,
-																		returncombinations=False)
+		matrix[vocab.index(row),vocab.index(column)] = co_occurrence(corpus=Corpus,word1=row,word2=column,contextwindow=2,returncombinations=False)
 
 print(pd.DataFrame(data=matrix,columns=vocab,index=vocab))
